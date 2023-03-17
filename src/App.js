@@ -36,7 +36,7 @@ function App() {
   }
 
   return (
-    <div className='container max-w-full h-screen bg-red-100'>
+    <div className=''>
       <div>
         <h1 className='font-bold text-3xl place-items-center grid text-blue-300'>This is an animal carousel</h1>
       </div>

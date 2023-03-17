@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Individuals = ({image}) => {
   return (
-    <div>
+    <div className=''>
         <img src={image.urls.full} alt='unsplash image' />
     </div>
   )
