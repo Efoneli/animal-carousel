@@ -28,7 +28,7 @@ function App() {
   const [images, setImages] = useState([]);
   
   const fetchAPI = async() => {
-    const response = await axios.get('https://api.unsplash.com/photos/?client_id=jtFqNdHC7BEtYuo2KYzvVVBfNtMgcIfOGqL90AuxPnU');
+    const response = await axios.get(`https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`);
     console.log(response.data);
     const data = await response.data;
     setImages(data);
