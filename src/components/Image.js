@@ -12,23 +12,26 @@ export default function Image(props) {
                 loading='lazy' 
                 className="h-52 w-full object-cover rounded-3xl md:h-80"
                 />
-                <div>
+                
+                <article className="flex flex-wrap items-center justify-between">
+                <div className='pt-5 flex items-center justify-start'>
                     <img src={props.user.profile_image.large} 
                     alt={props.user.name} 
                     loading='lazy'
                     className="w-20 rounded-full shadow"
                     />
                     
-                    <ul>
-                        <li>{props.user.name}</li> 
+                    <ul className='ml-3'>
+                        <li className='font-bold text-slate-800 mb-1'>{props.user.name}</li> 
                         <li>{format(new Date(props.created_at), 'dd MMMM yyyy')}</li>
                     </ul>
                 </div>
 
                 <div>
-                    <ul>
+                    <ul className='text-slate-600 text-sm text-right'>
                         <li>
                             <a href={`https://instagram.com/${props.user.instagram_username}`}
+                            className='underline'
                             >
                                 Instagram
                             </a>
@@ -36,6 +39,7 @@ export default function Image(props) {
                         <li>{props.likes} Likes</li>
                     </ul>
                 </div>
+                </article>
              </article>
         </>
     )
