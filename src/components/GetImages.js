@@ -1,5 +1,6 @@
 import { useState, useEffect
  } from "react";
+ import Image from './Image'
 
  export default function GetImages() {
     const [ images, setImages] = useState([])
@@ -18,13 +19,16 @@ import { useState, useEffect
 
     return (
         <>
-            {!images ? <h2>Loading...</h2> :
+            {!images ? 
+            <h2 className="flex items-center justify-center h-screen font-bold text-4xl text-center text-slate-800">
+                Loading...
+            </h2> :
             <section>
-                <h1>Recommended for you</h1>
+                <h1 className="font-bold text-3xl md:text-6xl my-10 lg:mt-20 lg:mb-16">Recommended for you</h1>
 
                 <div>
-                    {images.map((image, index) => (
-                        <Image key={index} />
+                    {images.map((image ) => (
+                        <Image key={image.id} {...image} />
                     ))}
                 </div>
             </section>
