@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from'react';
+import GetImages from './components/GetImages';
 // import AliceCarousel from 'react-alice-carousel';
 // import 'react-alice-carousel/lib/alice-carousel.css';
-import axios from 'axios';
-import Image from './components/Image';
+// import axios from 'axios';
+// import Image from './components/Image';
 
 
 
@@ -25,19 +26,20 @@ function App() {
   // const items = () => {
   //   Axios.get
   
-  const [images, setImages] = useState([]);
+  // const [images, setImages] = useState([]);
   
-  const fetchAPI = async() => {
-    const response = await axios.get(`https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`);
-    console.log(response.data);
-    const data = await response.data;
-    setImages(data);
+  // const fetchAPI = async() => {
+  //   const response = await axios.get(`https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`);
+  //   console.log(response.data);
+  //   const data = await response.data;
+  //   setImages(data);
     
-  }
+  // }
 
   return (
     <div className=''>
-      <div>
+      <GetImages />
+      {/* <div>
         <h1 className='font-bold text-3xl place-items-center grid text-blue-300'>This is an animal carousel</h1>
       </div>
       {/* <AliceCarousel
@@ -46,14 +48,14 @@ function App() {
         responsive={responsive}
         controlsStrategy="alternate"
         /> */}
-        <div>
+        {/* <div>
           <button onClick={fetchAPI} className='bg-red-600'>search here</button>
         </div>
         <div className='flex'>
           {images.length > 0 &&(
             <Image images = {images} />
           )}
-        </div>
+        </div> */}
     </div>
   );
 }
