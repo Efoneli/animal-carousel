@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from'react';
+import React from'react';
 import GetImages from './components/GetImages';
 
 function App() {
 
   return (
-    <div className=''>
+    <div>
       <GetImages />
-      
     </div>
   );
 }
