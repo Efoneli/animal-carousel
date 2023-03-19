@@ -27,7 +27,13 @@ export default function Image(props) {
 
                 <div>
                     <ul>
-                        <li>{}</li>
+                        <li>
+                            <a href={`https://instagram.com/${props.user.instagram_username}`}
+                            >
+                                Instagram
+                            </a>
+                        </li>
+                        <li>{props.likes} Likes</li>
                     </ul>
                 </div>
              </article>
