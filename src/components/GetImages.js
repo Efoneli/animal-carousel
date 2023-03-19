@@ -23,10 +23,11 @@ import { useState, useEffect
             <h2 className="flex items-center justify-center h-screen font-bold text-4xl text-center text-slate-800">
                 Loading...
             </h2> :
-            <section>
+            <section className="px-5 container mx-auto">
                 <h1 className="font-bold text-3xl md:text-6xl my-10 lg:mt-20 lg:mb-16">Recommended for you</h1>
 
-                <div>
+                <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3
+                ">
                     {images.map((image ) => (
                         <Image key={image.id} {...image} />
                     ))}
