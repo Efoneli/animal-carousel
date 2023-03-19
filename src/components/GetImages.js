@@ -1,4 +1,4 @@
-import { useState, useE, useEffect
+import { useState, useEffect
  } from "react";
 
  export default function GetImages() {
@@ -9,10 +9,26 @@ import { useState, useE, useEffect
             const response = await fetch(
                 `https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`
             )
-            const data = response.json()
+            const data = await response.json()
             setImages(data)
             console.log(data)
         }
         fetchImages()
     }, [])
+
+    return (
+        <>
+            {!images ? <h2>Loading...</h2> :
+            <section>
+                <h1>Recommended for you</h1>
+
+                <div>
+                    {images.map((image, index) => (
+                        <Image key={index} />
+                    ))}
+                </div>
+            </section>
+            }
+        </>
+    )
  }
